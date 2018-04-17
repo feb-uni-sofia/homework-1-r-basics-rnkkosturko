@@ -1,13 +1,69 @@
-Version: 1.0
+#1a
+x<- c(4, 1, 1, 4)
 
-RestoreWorkspace: Default
-SaveWorkspace: Default
-AlwaysSaveHistory: Default
+#1b
+y<- c(1, 4)
 
-EnableCodeIndexing: Yes
-UseSpacesForTab: Yes
-NumSpacesForTab: 2
-Encoding: UTF-8
+#1c
+x-y #The difference between 2 vectors
 
-RnwWeave: Sweave
-LaTeX: pdfLaTeX
+#1d
+s<-c(x, y)
+
+#1e
+rep(s, 10)
+length(rep(s, 10))
+
+#1f
+rep(s, each=3)
+
+#1g
+seq(from=7, to =21)
+7:21
+
+#1h
+length(7:21)
+
+#2a
+xmin<-c(23.0, 20.5, 28.2, 20.3, 22.4, 17.2, 18.2)
+xmax<-c(25.0, 22.8, 31.2, 27.3, 28.4, 20.2, 24.1)
+
+#2b
+difference<-xmax-xmin
+
+#2c
+avgMinTemp<-mean(xmin)
+avgMaxTemp<-mean(xmax)
+
+#2d
+xmin[c(xmin<avgMinTemp)]
+
+#2e
+xmin[c(xmin>avgMaxTemp)]
+
+#2f
+DayNames<-c('03Mon18', '04Tue18', '05Wed18', '06Thu18', '07Fri18', '08Sat19', '09Sun18')
+xmin
+str(xmin)
+names(xmin)<-DayNames
+
+xmax
+str(xmax)
+names(xmax)<-DayNames
+
+#2g
+temperatures<-data.frame(df.xmin=xmin, df.xmax=xmax)
+
+#2h
+temperatures<-within(temperatures, xminFahrenheit<- c(9/5*xmin))
+
+#2i
+xminFahrenheit<-xmin * (9/5) + 32
+Fahrenheit<-data.frame(df.xminFahrenheit = xminFahrenheit)
+
+#2j-i
+dayFahrenheit<-data.frame(df.xminFahrenheit = xminFahrenheit[1:5])
+
+#2j-ii
+dayFahrenheit<-data.frame(df.xminFahrenheit = xminFahrenheit[c(-6, -7)])
+
